@@ -44,6 +44,11 @@ async function run(){
 
             res.send(text)
         })
+        app.get("/main", async(req, res) =>{
+            let text ="text is : form main"
+
+            res.send(text)
+        })
     }
     finally{
 
