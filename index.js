@@ -12,7 +12,7 @@ require('dotenv').config()
 //declearing mongodb
 const userName = process.env.user
 const passWord = process.env.pass
-
+console.log("username and passwords are: ", userName, passWord)
 const url = `mongodb+srv://${userName}:${passWord}@cluster0.js1z3.mongodb.net/?retryWrites=true&w=majority`
 const client = new MongoClient(url)
 
@@ -34,11 +34,13 @@ async function run(){
             const products = await cursor.limit(6).toArray()
             // console.log(products)
 
+            
+
             res.send(products)
         })
 
         app.get("/home", async(req, res) =>{
-            let text = "test is going online from home"
+            let text = userName + passWord
 
             res.send(text)
         })
