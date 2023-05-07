@@ -13,6 +13,7 @@ require('dotenv').config()
 const userName = process.env.user
 const passWord = process.env.pass
 console.log("username and passwords are: ", userName, passWord)
+
 const url = `mongodb+srv://${userName}:${passWord}@cluster0.js1z3.mongodb.net/?retryWrites=true&w=majority`
 const client = new MongoClient(url)
 
@@ -50,6 +51,7 @@ async function run(){
             res.send(text)
         })
     }
+    catch(error){console.log(error)}
     finally{
 
     }
