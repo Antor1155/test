@@ -40,7 +40,7 @@ async function run(){
         })
 
         app.get("/home", async(req, res) =>{
-            let text = userName + passWord
+            let text ="text is :" + userName + passWord
 
             res.send(text)
         })
