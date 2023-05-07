@@ -25,15 +25,14 @@ app.use(express.json())
 
 async function run(){
     try{
-        await client.connect()
-        const productCollection = client.db("warehouseOfFoodCompany").collection("Products")
+        // await client.connect()
+        // const productCollection = client.db("warehouseOfFoodCompany").collection("Products")
 
         app.get("/", async(req, res) =>{
-            let text = "test is going online"
-            const query = {};
-            const cursor =  productCollection.find(query)
-            let products = await cursor.limit(6).toArray()
-            // console.log(products)
+            let products = ["hello", "how", "are", "you"]
+            // const query = {};
+            // const cursor =  productCollection.find(query)
+            // let products = await cursor.limit(6).toArray()
 
             console.log(typeof products)
             products = JSON.stringify(products)
