@@ -32,11 +32,12 @@ async function run(){
             let text = "test is going online"
             const query = {};
             const cursor =  productCollection.find(query)
-            const products = await cursor.limit(6).toArray()
+            let products = await cursor.limit(6).toArray()
             // console.log(products)
 
-            
-
+            console.log(typeof products)
+            products = JSON.stringify(products)
+            console.log(typeof products)
             res.send(products)
         })
 
